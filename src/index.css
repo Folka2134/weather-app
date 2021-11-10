@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'titleFont';
+    src: local('weatherTitle'), url(./fonts/weatherTitle.ttf) format('truetype');
+    /* other formats include: 'woff2', 'truetype, 'opentype',
+                              'embedded-opentype', and 'svg' */
+  }
+
+body {
+    background-color: black;
+}
+
+@layer components {
+    .button {
+      @apply bg-gray-700 hover:bg-gray-500 border-2 rounded-lg m-2 p-1 transition-all duration-500 ease-linear shadow-2xl
+    }
+}
