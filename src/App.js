@@ -9,7 +9,6 @@ import './App.css';
 
 
 const App = () => {
-
   const [data, setData] = useState([])
   const [searchBox, setSearchBox] = useState("")
 
@@ -17,6 +16,8 @@ const App = () => {
     setSearchBox(e.currentTarget.value)
   }
 
+
+  // dummy data
   useEffect(() => {
       const fetchData = async () => {
         const result = await axios(
@@ -29,7 +30,7 @@ const App = () => {
       fetchData();
     }, []);
 
-    
+    // weather API
   // useEffect(() => {
   //     const fetchData = async () => {
   //       const result = await axios(
@@ -48,9 +49,9 @@ const App = () => {
   })
  
   return (
-    <div className="App h-full min-h-screen bg-gray-800">
+    <div className="App h-full min-h-screen bg-gray-800 bg-weather-background bg-cover bg-center bg-fixed">
       <div className="pt-36 fs">
-        <h1 className="text-6xl font-title">Folka.Weather</h1>
+        <h1 className="text-6xl font-title">Folka.WeatherFlip</h1>
         <SearchBox handleChange={handleChange}/>
         <CardList locations={filteredLocations}/>
       </div>
