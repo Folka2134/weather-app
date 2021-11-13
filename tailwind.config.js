@@ -5,7 +5,18 @@ module.exports = {
     fontFamily: {
       "title" : ["titleFont"]
     },
-    extend: {},
+    extend: {
+      height: {
+        xxl: "455px"
+       },
+      backgroundImage: {
+        "weather-background": "url('/src/images/background.jpg')",
+      },
+    backgroundColor: {
+      'cardPrimary': '#291DA1',
+      'cardSecondary': '#E8E6FF',
+      },
+    },
   },
   variants: {
     extend: {

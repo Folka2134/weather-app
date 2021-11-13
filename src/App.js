@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 
-import axios from 'axios';
+// import axios from 'axios';
+import { mainLocations } from './locations';
 
 import { SearchBox } from './components/searchBox/searchBox.component';
 import { CardList } from './components/cardList/cardList.component';
@@ -9,26 +10,17 @@ import './App.css';
 
 
 const App = () => {
-  const [data, setData] = useState([])
+
+  const [locations, setLocation] = useState([...mainLocations])
   const [searchBox, setSearchBox] = useState("")
 
   const handleChange = (e) => {
     setSearchBox(e.currentTarget.value)
+    // setLocation(e.currentTarget.value)
   }
 
 
   // dummy data
-  useEffect(() => {
-      const fetchData = async () => {
-        const result = await axios(
-          'https://jsonplaceholder.typicode.com/users',
-        );
-   
-        setData(result.data);
-      };
-   
-      fetchData();
-    }, []);
 
     // weather API
   // useEffect(() => {
@@ -44,9 +36,10 @@ const App = () => {
   //   }, []);
 
 
-  const filteredLocations = data.filter((location) => {
-    return location.name.toLowerCase().includes(searchBox.toLocaleLowerCase())
+  const filteredLocations = locations.filter((location) => {
+    return location.city.toLowerCase().includes(searchBox.toLocaleLowerCase())
   })
+  // console.log(filteredLocations);
  
   return (
     <div className="App h-full min-h-screen bg-gray-800 bg-weather-background bg-cover bg-center bg-fixed">
