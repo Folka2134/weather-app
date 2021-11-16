@@ -12,10 +12,6 @@ export const CardList = (props) => {
           <Card 
             key={location.id} 
             location={location}
-            // city={location.city}
-            // country={location.country}
-            // data={weather}
-
           />
         ))}
       </div>

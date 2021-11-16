@@ -7,7 +7,7 @@ module.exports = {
     },
     extend: {
       height: {
-        xxl: "455px"
+        xxl: "475px"
        },
       backgroundImage: {
         "weather-background": "url('/src/images/background.jpg')",
