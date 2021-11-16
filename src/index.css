@@ -24,11 +24,28 @@ body {
     background-color: black;
 }
 
+.card .front {
+  transform: rotateY(90deg);
+  position: absolute;
+}
+.flipped .front {
+  transform: rotateY(0deg);
+}
+.back {}
+
+
+
 @layer components {
     .button {
       @apply h-20 w-24 flex justify-center items-center bg-cardPrimary border-2 rounded-lg m-2 p-3 transition-all duration-500 ease-linear shadow-2xl
     }
     .card {
-      @apply flex flex-col bg-cardPrimary hover:bg-purple-900 text-white border-2 bg-opacity-60 border-gray-300 rounded-md m-3 p-6 cursor-pointer shadow-md  w-auto h-xxl transition-all duration-500 ease-linear scale-0 hover:scale-x-150
+      @apply flex flex-col relative bg-cardPrimary hover:bg-purple-900 text-white border-2 bg-opacity-60 border-gray-300 rounded-md m-3 p-6 cursor-pointer shadow-md h-xxl w-80 transition-all duration-500 ease-linear scale-0 hover:scale-x-150
+    }
+    .flipped {
+      @apply transition-all duration-500 ease-linear delay-150
+    }
+    .back {
+      @apply hidden transition-all duration-500 ease-linear delay-150
     }
 }

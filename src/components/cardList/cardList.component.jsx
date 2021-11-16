@@ -1,17 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import { Card } from '../card/card.component'
 
 // const key = "8a32bc17bfde477e8d8175552211011"
 
-export const CardList = (props) => {
-  console.log(props);
+export const CardList = ({locations }) => {
+  const [choice, setChoice] = useState([])
+
+  const handleChoice = (chosenCard) => (
+    setChoice(chosenCard)
+  )
+  
     return (
         <div className="card-list flex flex-wrap justify-center">
-        {props.locations.map((location) => (           
+        {locations.map((location) => (           
           <Card 
             key={location.id} 
             location={location}
+            handleChoice={handleChoice}
+            flipped={location.id === choice.id}
           />
         ))}
       </div>
