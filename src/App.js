@@ -19,7 +19,6 @@ const App = () => {
     // setLocation(e.currentTarget.value)
   }
 
-
   // dummy data
 
     // weather API
@@ -37,16 +36,18 @@ const App = () => {
 
 
   const filteredLocations = locations.filter((location) => {
-    return location.city.toLowerCase().includes(searchBox.toLocaleLowerCase())
+    if (location.city || location.Continent || location.country) {
+      return location.city.toLowerCase().includes(searchBox.toLocaleLowerCase()) || location.Continent.toLowerCase().includes(searchBox.toLocaleLowerCase()) || location.country.toLowerCase().includes(searchBox.toLocaleLowerCase())
+    }
+    return location
   })
-  // console.log(filteredLocations);
  
   return (
     <div className="App h-full min-h-screen bg-gray-800 bg-weather-background bg-cover bg-center bg-fixed">
-      <div className="pt-36 fs">
+      <div className="pt-36">
         <h1 className="text-6xl font-title">Folka.WeatherFlip</h1>
-        <SearchBox handleChange={handleChange}/>
-        <CardList locations={filteredLocations}/>
+          <SearchBox handleChange={handleChange}/>
+          <CardList locations={filteredLocations}/>
       </div>
     </div>
   );

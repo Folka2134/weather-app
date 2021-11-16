@@ -29,5 +29,35 @@ export const mainLocations = [
         "country": "Germany",
         "Continent": "Europe",
     },
+    {
+        "id": 6,
+        "city": "Chicago",
+        "country": "United States",
+        "Continent": "North-America",
+    },
+    {
+        "id": 7,
+        "city": "Tokyo",
+        "country": "Japan",
+        "Continent": "Asia",
+    },
+    {
+        "id": 8,
+        "city": "Delhi",
+        "country": "India",
+        "Continent": "Asia",
+    },
+    {
+        "id": 9,
+        "city": "Shanghai",
+        "country": "China",
+        "Continent": "Asia",
+    },
+    {
+        "id": 10,
+        "city": "Cairo",
+        "country": "Egypt",
+        "Continent": "Asia",
+    },
     
 ]
