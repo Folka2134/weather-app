@@ -59,5 +59,11 @@ export const mainLocations = [
         "country": "Egypt",
         "Continent": "Asia",
     },
+    {
+        "id": 10,
+        "city": "Cairo",
+        "country": "Egypt",
+        "Continent": "Asia",
+    },
     
 ]

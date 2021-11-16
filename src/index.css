@@ -20,6 +20,6 @@ body {
       @apply h-20 w-20 flex justify-center items-center bg-gray-700 hover:bg-gray-500 border-2 rounded-lg m-2 p-3 transition-all duration-500 ease-linear shadow-2xl
     }
     .card {
-      @apply flex flex-col bg-cardPrimary hover:bg-purple-900 border-2 bg-opacity-60 border-gray-300 rounded-md m-3 p-6 cursor-pointer shadow-md  w-auto h-xxl transition-all duration-500 ease-linear scale-0 hover:scale-x-150
+      @apply flex flex-col bg-cardPrimary hover:bg-purple-900 text-white border-2 bg-opacity-60 border-gray-300 rounded-md m-3 p-6 cursor-pointer shadow-md  w-auto h-xxl transition-all duration-500 ease-linear scale-0 hover:scale-x-150
     }
 }
