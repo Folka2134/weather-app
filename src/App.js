@@ -10,9 +10,8 @@ import './App.css';
 
 const App = () => {
 
-  const [locations, setLocation] = useState([...mainLocations])
+  const [locations, setLocation] = useState([...mainLocations.slice(0, 2)])
   const [searchBox, setSearchBox] = useState("")
-
 
   const handleChange = (e) => {
     setSearchBox(e.currentTarget.value)

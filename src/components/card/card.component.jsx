@@ -2,21 +2,25 @@ import React, { useEffect, useState } from 'react'
 
 import axios from 'axios';
 
-export const Card = ({ location, handleChoice, flipped }) => {
+export const Card = ({ location, handleChoice, flipped, index }) => {
     const [weather, setWeather] = useState(null)
 
     // weather API
     useEffect(() => {
-      const fetchData = async () => {
-          const result = await axios(
-          `http://api.weatherapi.com/v1/current.json?key=8a32bc17bfde477e8d8175552211011&q=${location.city_ascii}&aqi=no`,
-          );
-  
-          setWeather(result.data);
+        let apiSubscribed = true
+        const fetchData = async () => {
+            const result = await axios(
+            `http://api.weatherapi.com/v1/current.json?key=8a32bc17bfde477e8d8175552211011&q=${location.city_ascii}&aqi=no`,
+            );
+            if (apiSubscribed) {
+                setWeather(result.data);
+            }
       };
       
-  
       fetchData();
+      return () => {
+          apiSubscribed = false
+      }
     },[location.city_ascii]);
 
     const handleClick = () => {
@@ -27,7 +31,7 @@ export const Card = ({ location, handleChoice, flipped }) => {
         <div className="card">
             {weather ?
             <div>
-                <div className={flipped ? "flipped" : "front"}>
+                <div className={flipped ? "flipped" : "front"} >
                     <h1 className="grid bg-cardSecondary mb-3 p-3 rounded-b-full text-black border-2 border-purple-600 ">
                         <span>{location.city}</span> 
                         <span>{location.country}</span> 
@@ -41,6 +45,12 @@ export const Card = ({ location, handleChoice, flipped }) => {
                             <li className="stat">Wind Direction: {weather.current.wind_dir}</li>
                             <li className="stat">Wind Speed: {weather.current.wind_mph}mph</li>
                         </ul>
+                    </div>
+                    <div className="flex justify-center">
+                        <span className="button"><img src={weather.current.condition.icon} alt="" /></span>
+                        <span className="button text-3xl p-1">
+                            {weather.current.temp_c}°c
+                        </span>
                     </div>
                 </div>
                 <div className={flipped ? "back" : "flipped"} onClick={handleClick}>
