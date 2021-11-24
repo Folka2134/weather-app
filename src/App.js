@@ -10,7 +10,7 @@ import './App.css';
 
 const App = () => {
 
-  const [locations, setLocation] = useState([...mainLocations.slice(0, 2)])
+  const [locations, setLocation] = useState([...mainLocations])
   const [searchBox, setSearchBox] = useState("")
 
   const handleChange = (e) => {

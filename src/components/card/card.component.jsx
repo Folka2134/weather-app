@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 
 import axios from 'axios';
 
-export const Card = ({ location, handleChoice, flipped, index }) => {
+export const Card = ({ location, handleChoice, flipped }) => {
     const [weather, setWeather] = useState(null)
 
     // weather API
@@ -54,8 +54,9 @@ export const Card = ({ location, handleChoice, flipped, index }) => {
                     </div>
                 </div>
                 <div className={flipped ? "back" : "flipped"} onClick={handleClick}>
-                    <img alt="monster" src={`https://robohash.org/${location.id}?set=set2&size=250x250`} className=" w-64 h-64" />
-                    <h1 className="grid bg-cardSecondary mb-3 p-3 rounded-b-full text-black border-2 border-purple-600 ">
+                    {/* <img alt="monster" src={`https://robohash.org/${location.id}?set=set2&size=250x250`} className=" w-64 h-64" /> */}
+                    <img alt="monster" src={location.image} className=" w-full h-64" />
+                    <h1 className="grid bg-cardSecondary mb-3 p-3 rounded-b-full text-black border-2 ">
                         <span>{location.city}</span> 
                         <span>{location.country}</span> 
                     </h1>

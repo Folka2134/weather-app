@@ -21,7 +21,6 @@ export const CardList = ({ locations }) => {
               location={location}
               handleChoice={handleChoice}
               flipped={location.id === choice.id}
-              index={index * 5000}
             />
           ))
         }
