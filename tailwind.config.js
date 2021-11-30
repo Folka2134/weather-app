@@ -15,7 +15,14 @@ module.exports = {
     backgroundColor: {
       'cardPrimary': '#291DA1',
       'cardSecondary': '#E8E6FF',
+      'cardPrimary2': '#111B14',
+      'cardSecondary2': '#2A4F4A',
+      "cardThird" : "#4F2A4E",
+      'buttonPrimary' : "#4F2A4E"
       },
+    textColor: {
+      'textTitle': '#1C131C',
+    }
     },
   },
   variants: {

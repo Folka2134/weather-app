@@ -28,44 +28,36 @@ export const Card = ({ location, handleChoice, flipped }) => {
     }
 
     return (
-        <div className="card">
+        <div className="card" onClick={handleClick} >
+                                 {/* <img src="https://flagcdn.com/32x24/za.png" alt="" className="mx-4"/> */}
             {weather ?
             <div>
+                
                 <div className={flipped ? "flipped" : "front"} >
-                    <h1 className="grid bg-cardSecondary mb-3 p-3 rounded-b-full text-black border-2 border-purple-600 ">
-                        <span>{location.city}</span> 
-                        <span>{location.country}</span> 
-                    </h1>
-                    <div className=" justify-center">
+                    <div className="justify-center align py-11">
                         <ul className="stats">
                             <li className="stat">Cloud: {weather.current.cloud}%</li>
                             <li className="stat">Feels like: {weather.current.feelslike_c}°C</li>
                             <li className="stat">Humidity: {weather.current.humidity}%</li>
-                            <li className="stat">Local time: {weather.location.localtime.slice(10)}</li>
                             <li className="stat">Wind Direction: {weather.current.wind_dir}</li>
                             <li className="stat">Wind Speed: {weather.current.wind_mph}mph</li>
                         </ul>
                     </div>
-                    <div className="flex justify-center">
-                        <span className="button"><img src={weather.current.condition.icon} alt="" /></span>
-                        <span className="button text-3xl p-1">
-                            {weather.current.temp_c}°c
-                        </span>
-                    </div>
+                 </div>
+                <div className={flipped ? "back" : "flipped"} >
+                    <img alt="monster" src={location.image} className=" w-full h-52" />
                 </div>
-                <div className={flipped ? "back" : "flipped"} onClick={handleClick}>
-                    {/* <img alt="monster" src={`https://robohash.org/${location.id}?set=set2&size=250x250`} className=" w-64 h-64" /> */}
-                    <img alt="monster" src={location.image} className=" w-full h-64" />
-                    <h1 className="grid bg-cardSecondary mb-3 p-3 rounded-b-full text-black border-2 ">
-                        <span>{location.city}</span> 
-                        <span>{location.country}</span> 
-                    </h1>
-                    <div className="flex justify-center">
-                        <span className="button"><img src={weather.current.condition.icon} alt="" /></span>
-                        <span className="button text-3xl p-1">
-                            {weather.current.temp_c}°c
-                        </span>
-                    </div>
+                <div className="grid bg-cardThird my-3 text-white border-2 rounded-lg">
+                    {/* <img src={`https://flagcdn.com/64x48/${location.iso2.toLowerCase()}.png`} alt="" className="absolute"/> */}
+                    <span>{location.city}</span> 
+                    <span>{location.country}</span> 
+                    <span className="bg-gray-900"> {weather.location.localtime.slice(10)}</span> 
+                </div>
+                <div className="flex justify-center">
+                    <span className="button"><img src={weather.current.condition.icon} alt="" /></span>
+                    <span className="button text-3xl p-1">
+                        {weather.current.temp_c}°c
+                    </span>
                 </div>
             </div>
             

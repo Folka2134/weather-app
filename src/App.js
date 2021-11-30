@@ -27,7 +27,7 @@ const App = () => {
   return (
     <div className="App h-full min-h-screen bg-gray-800 bg-weather-background bg-cover bg-center bg-fixed">
       <div className="pt-36">
-        <h1 className="text-6xl font-title bg-gray-900 bg-opacity-40 text-purple-400">Folka.WeatherFlip</h1>
+        <h1 className="text-6xl font-title bg-gray-900 bg-opacity-40 text-textTitle">Folka.WeatherFlip</h1>
           <SearchBox handleChange={handleChange}/>
           <CardList locations={filteredLocations}/>
       </div>
