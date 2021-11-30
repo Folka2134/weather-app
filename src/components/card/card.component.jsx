@@ -48,7 +48,7 @@ export const Card = ({ location, handleChoice, flipped }) => {
                     <img alt="monster" src={location.image} className=" w-full h-52" />
                 </div>
                 <div className="grid bg-cardThird my-3 text-white border-2 rounded-lg">
-                    {/* <img src={`https://flagcdn.com/64x48/${location.iso2.toLowerCase()}.png`} alt="" className="absolute"/> */}
+                    <img src={`https://flagcdn.com/64x48/${location.iso2.toLowerCase()}.png`} alt="" className="absolute"/>
                     <span>{location.city}</span> 
                     <span>{location.country}</span> 
                     <span className="bg-gray-900"> {weather.location.localtime.slice(10)}</span> 
