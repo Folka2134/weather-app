@@ -17,17 +17,16 @@ module.exports = {
       'cardSecondary': '#E8E6FF',
       'cardPrimary2': '#111B14',
       'cardSecondary2': '#2A4F4A',
-      "cardThird" : "#4F2A4E",
-      'buttonPrimary' : "#4F2A4E"
+      'buttonPrimary' : "#81A4FD"
       },
     textColor: {
-      'textTitle': '#1C131C',
+      'textTitle': '#A78BFA',
     }
     },
   },
   variants: {
     extend: {
-      scale: ['active', 'group-hover'],
+      scale: ['active', 'group-hover', 'hover'],
     },
   },
   plugins: [],

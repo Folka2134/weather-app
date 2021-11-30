@@ -8,7 +8,11 @@ export const CardList = ({ locations }) => {
   const [choice, setChoice] = useState([])
 
   const handleChoice = (chosenCard) => {
+    if (choice !== chosenCard) {
       setChoice(chosenCard)
+    } else if (chosenCard === choice) {
+      setChoice([])
+    }
   }
   
   
