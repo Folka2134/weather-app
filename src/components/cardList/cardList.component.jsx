@@ -19,7 +19,7 @@ export const CardList = ({ locations }) => {
     return (
         <div className="card-list flex flex-wrap justify-center">
         {
-          locations.map((location, index) => (
+          locations.slice(0,5).map((location, index) => (
             <Card 
               key={location.id} 
               location={location}
