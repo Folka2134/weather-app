@@ -7,7 +7,6 @@ import { CardList } from './components/cardList/cardList.component';
 
 import './App.css';
 
-
 const App = () => {
 
   const [locations, setLocation] = useState([...mainLocations])
