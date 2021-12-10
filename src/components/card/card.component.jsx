@@ -10,7 +10,7 @@ export const Card = ({ location, handleChoice, flipped }) => {
         let apiSubscribed = true
         const fetchData = async () => {
             const result = await axios(
-            `http://api.weatherapi.com/v1/current.json?key=8a32bc17bfde477e8d8175552211011&q=${location.city_ascii}&aqi=no`,
+            `https://api.weatherapi.com/v1/current.json?key=8a32bc17bfde477e8d8175552211011&q=${location.city_ascii}&aqi=no`,
             );
             if (apiSubscribed) {
                 setWeather(result.data);
